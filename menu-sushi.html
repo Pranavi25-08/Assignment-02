@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sushi World 🍣</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Sushi World 🍣</h1>
+
+    <div class="card">
+      <div class="item">
+        <img src="assets/images/sushi.jpg" alt="California Roll" />
+        <h3>California Roll</h3>
+        <p>₹350</p>
+        <button onclick="addToCart('California Roll', 350)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <img src="assets/images/nigiri.jpg" alt="Nigiri" />
+        <h3>Nigiri</h3>
+        <p>₹320</p>
+        <button onclick="addToCart('Nigiri', 320)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <img src="assets/images/miso.jpg" alt="Miso Soup" />
+        <h3>Miso Soup</h3>
+        <p>₹120</p>
+        <button onclick="addToCart('Miso Soup', 120)">Add to Cart</button>
+      </div>
+    </div>
+
+    <a href="cart.html"><button>Go to Cart</button></a>
+  </div>
+
+  
+  <script src="js/script.js"></script>
+
+</body>
+</html>

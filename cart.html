@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🛒 Your Cart</h1>
+    <ul id="cartItems"></ul>
+    <h3 id="total">Total: ₹0</h3>
+
+    <button id="placeOrder" disabled>Place Order</button>
+    <button id="clearCart">Clear Cart</button>
+  </div>
+
+  <script>
+    const list = document.getElementById('cartItems');
+    const totalDisplay = document.getElementById('total');
+    const clearButton = document.getElementById('clearCart');
+    const placeOrderButton = document.getElementById('placeOrder');
+
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = 0;
+
+    function renderCart() {
+      list.innerHTML = '';
+      total = 0;
+
+      if (cartItems.length === 0) {
+        list.innerHTML = '<li>Your cart is empty.</li>';
+        totalDisplay.textContent = 'Total: ₹0';
+        placeOrderButton.disabled = true;
+        return;
+      }
+
+      cartItems.forEach((item) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ₹${item.price}`;
+        list.appendChild(li);
+        total += item.price;
+      });
+
+      totalDisplay.textContent = `Total: ₹${total}`;
+      placeOrderButton.disabled = false;
+    }
+
+    clearButton.addEventListener('click', () => {
+      localStorage.removeItem('cart');
+      cartItems = [];
+      renderCart();
+    });
+
+    placeOrderButton.addEventListener('click', () => {
+      localStorage.removeItem('cart');
+      cartItems = [];
+      renderCart();
+      window.location.href = "order-tracking.html";
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>

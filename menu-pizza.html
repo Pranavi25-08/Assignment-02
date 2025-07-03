@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizza Palace Menu</title>
+
+  <!-- ✅ External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ✅ Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Pizza Palace 🍕</h1>
+
+    <div class="card">
+      <div class="item">
+        <img src="assets/images/pizza.jpg" alt="Cheese Burst Pizza" />
+        <h3>Cheese Burst Pizza</h3>
+        <p>₹299</p>
+        <button onclick="addToCart('Cheese Burst Pizza', 299)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <img src="assets/images/pepperoni.jpg" alt="Pepperoni Pizza" />
+        <h3>Pepperoni Pizza</h3>
+        <p>₹349</p>
+        <button onclick="addToCart('Pepperoni Pizza', 349)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <img src="assets/images/vegpizza.jpg" alt="Veggie Delight" />
+        <h3>Veggie Delight</h3>
+        <p>₹279</p>
+        <button onclick="addToCart('Veggie Delight', 279)">Add to Cart</button>
+      </div>
+    </div>
+
+    <a href="cart.html">
+      <button><i class="fas fa-shopping-cart"></i> View Cart</button>
+    </a>
+  </div>
+
+  
+  <script src="js/script.js"></script>
+
+</body>
+</html>

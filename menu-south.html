@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>South Express 🍱</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>South Express 🍱</h1>
+
+    <div class="card">
+      <div class="item">
+        <img src="assets/images/idli.jpg" alt="Idli Sambar" />
+        <h3>Idli Sambar</h3>
+        <p>₹70</p>
+        <button onclick="addToCart('Idli Sambar', 70)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <img src="assets/images/dosa.jpg" alt="Masala Dosa" />
+        <h3>Masala Dosa</h3>
+        <p>₹90</p>
+        <button onclick="addToCart('Masala Dosa', 90)">Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <img src="assets/images/upma.jpg" alt="Upma" />
+        <h3>Upma</h3>
+        <p>₹60</p>
+        <button onclick="addToCart('Upma', 60)">Add to Cart</button>
+      </div>
+    </div>
+
+    <a href="cart.html"><button>Go to Cart</button></a>
+  </div>
+
+ 
+  <script src="js/script.js"></script>
+
+</body>
+</html>

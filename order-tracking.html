@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Tracking</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .tracking-step {
+      margin: 1rem auto;
+      padding: 1rem;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 10px;
+      background-color: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      transition: background-color 0.5s ease;
+    }
+
+    .tracking-step.active {
+      background-color: #d1e7dd;
+      font-weight: bold;
+    }
+
+    .step-icon {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+      border: none;
+      background-color: #4caf50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚚 Order Tracking</h1>
+
+  <div class="tracking-step active"><span class="step-icon">🛒</span> Order Placed</div>
+  <div class="tracking-step"><span class="step-icon">👨‍🍳</span> Preparing Food</div>
+  <div class="tracking-step"><span class="step-icon">📦</span> Packed</div>
+  <div class="tracking-step"><span class="step-icon">🚴</span> Out for Delivery</div>
+  <div class="tracking-step"><span class="step-icon">✅</span> Delivered</div>
+
+  <a href="index.html"><button>Back to Home</button></a>
+
+  <script>
+    const steps = document.querySelectorAll(".tracking-step");
+    let current = 0;
+
+    function nextStep() {
+      if (current < steps.length - 1) {
+        steps[current].classList.remove("active");
+        current++;
+        steps[current].classList.add("active");
+      } else {
+        clearInterval(interval);
+      }
+    }
+
+    const interval = setInterval(nextStep, 2000); // change step every 2 seconds
+  </script>
+</body>
+</html>
